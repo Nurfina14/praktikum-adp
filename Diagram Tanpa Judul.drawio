@@ -1,9 +1,105 @@
-<mxfile host="app.diagrams.net" modified="2024-03-18T07:58:55.274Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36" version="24.0.7" etag="JklM2E7Oz8ognLU3zXhq" type="github">
+<mxfile host="app.diagrams.net" modified="2024-03-18T08:10:06.641Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36" etag="2p0Z7kmMn9i3voX2M8vj" version="24.0.7" type="github">
   <diagram name="Halaman-1" id="K5IAGqaC7cumEMZ9t6vl">
-    <mxGraphModel>
+    <mxGraphModel dx="1467" dy="792" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="zT7gVMMoEmYTCifeX7c--1" value="mulai" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="10" width="80" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="zT7gVMMoEmYTCifeX7c--2" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="zT7gVMMoEmYTCifeX7c--1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="270" as="sourcePoint" />
+            <mxPoint x="320" y="100" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zT7gVMMoEmYTCifeX7c--3" value="String nama, kota tujuan, jenis maskapai&lt;div&gt;int pilihan kota tujuan, pilihan jenis maskapai, umur, jenis kelamin, harga&lt;/div&gt;" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="100" width="250" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="zT7gVMMoEmYTCifeX7c--4" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="315" y="180" as="sourcePoint" />
+            <mxPoint x="315" y="220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zT7gVMMoEmYTCifeX7c--5" value="input&amp;nbsp;&lt;div&gt;nama, umur&lt;/div&gt;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="250" y="220" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="zT7gVMMoEmYTCifeX7c--6" value="&lt;div&gt;output&lt;/div&gt;&lt;div&gt;nama:....&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;umur :......&lt;/span&gt;&lt;/div&gt;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="240" y="310" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="zT7gVMMoEmYTCifeX7c--7" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="zT7gVMMoEmYTCifeX7c--5">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="270" as="sourcePoint" />
+            <mxPoint x="310" y="310" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zT7gVMMoEmYTCifeX7c--8" value="input&amp;nbsp;&lt;div&gt;pilihan kota tujuan&lt;/div&gt;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="220" y="400" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="zT7gVMMoEmYTCifeX7c--9" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.583;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="zT7gVMMoEmYTCifeX7c--6" target="zT7gVMMoEmYTCifeX7c--8">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="270" as="sourcePoint" />
+            <mxPoint x="440" y="220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zT7gVMMoEmYTCifeX7c--10" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.55;exitY=1.017;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="zT7gVMMoEmYTCifeX7c--8">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="270" as="sourcePoint" />
+            <mxPoint x="297" y="490" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zT7gVMMoEmYTCifeX7c--11" value="TIDAK" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="295" y="570" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="zT7gVMMoEmYTCifeX7c--12" value="jenis kelamin = 1" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="230" y="490" width="130" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="zT7gVMMoEmYTCifeX7c--13" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="zT7gVMMoEmYTCifeX7c--12">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="330" y="330" as="sourcePoint" />
+            <mxPoint x="390" y="530" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zT7gVMMoEmYTCifeX7c--14" value="&lt;div&gt;output&lt;/div&gt;&lt;div&gt;laki-laki&lt;/div&gt;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="380" y="500" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="zT7gVMMoEmYTCifeX7c--15" value="YA" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="350" y="500" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="zT7gVMMoEmYTCifeX7c--16" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="zT7gVMMoEmYTCifeX7c--12">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="210" y="370" as="sourcePoint" />
+            <mxPoint x="295" y="610" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zT7gVMMoEmYTCifeX7c--18" value="jenis kelamin = 2" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="230" y="610" width="130" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="zT7gVMMoEmYTCifeX7c--19" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="zT7gVMMoEmYTCifeX7c--18">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="210" y="370" as="sourcePoint" />
+            <mxPoint x="400" y="650" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zT7gVMMoEmYTCifeX7c--20" value="&lt;div&gt;output&lt;/div&gt;&lt;div&gt;perempuani&lt;/div&gt;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="390" y="620" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="zT7gVMMoEmYTCifeX7c--21" value="YA" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="355" y="620" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="zT7gVMMoEmYTCifeX7c--22" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="zT7gVMMoEmYTCifeX7c--18">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="210" y="550" as="sourcePoint" />
+            <mxPoint x="295" y="720" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zT7gVMMoEmYTCifeX7c--23" value="TIDAK" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="295" y="690" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="zT7gVMMoEmYTCifeX7c--24" value="&lt;div&gt;output&lt;/div&gt;&lt;div&gt;tidak valid&lt;/div&gt;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="230" y="720" width="140" height="60" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>

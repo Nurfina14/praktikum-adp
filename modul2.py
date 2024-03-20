@@ -14,8 +14,10 @@ if pilihan_jenis_kelamin == '1':
     jenis_kelamin = 'laki-laki'
 elif pilihan_jenis_kelamin == '2':
     jenis_kelamin = 'perempuan'
-elif pilihan_jenis_kelamin > 2 :
-    jenis_kelamin = 'Tidak Valid'
+else : 
+    print ('tidak valid')
+    exit()
+
 
 # tujuan keberangkatan
 print (' \nSilahkan Pilih Tujuan Keberangkatan Anda ')
@@ -41,6 +43,9 @@ if pilihan_kota_tujuan == '1':
     elif pilihan_jenis_maskapai == '3':
         jenis_maskapai = 'First Class'
         harga_tiket = 1300000
+    else :
+        print ('tidak valid')
+        exit()
 elif pilihan_kota_tujuan == '2':
     kota_tujuan = 'Jakarta'
     # jenis maskapai
@@ -58,6 +63,9 @@ elif pilihan_kota_tujuan == '2':
     elif pilihan_jenis_maskapai == '3':
         jenis_maskapai = 'First Class'
         harga_tiket = 1000000
+    else :
+        print ('tidak valid')
+        exit()
 elif pilihan_kota_tujuan == '3':
     kota_tujuan = 'Jambi'
     # jenis maskapai
@@ -75,12 +83,15 @@ elif pilihan_kota_tujuan == '3':
     elif pilihan_jenis_maskapai == '3':
         jenis_maskapai = 'First Class'
         harga_tiket = 900000
+    else :
+        print ('tidak valid')
+        exit()
 
-elif pilihan_kota_tujuan > '3' :
-    kota_tujuan = 'Tidak Valid'
+else :
+    print ('tidak valid')
+    exit()
 
-if pilihan_jenis_maskapai > '3' :
-    jenis_maskapai = 'Tidak Valid'
+
 
 # jumlah tiket
 jumlah_tiket = int (input ('\nMasukkan Jumlah Tiket: '))

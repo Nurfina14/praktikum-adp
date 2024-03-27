@@ -1,0 +1,40 @@
+#include<iostream>
+using namespace std;
+
+int main (){
+	int baris, kolom, shift, NIM;
+	string nama;
+	cout << "Nama: Nur Fina" <<endl;
+	cout << "NIM: 2310432016" <<endl;
+	cout << "Shift: 4" <<endl;
+	cout << "Masukkan Jumlah Baris: ";
+	cin >> baris;
+	
+	kolom = baris * 2 - 1;
+	
+	for (int i = 1; i <= baris; i++)
+	{	
+		char k = 'A' - 1;
+		for (int j = 1; j <= kolom; j++)
+		{
+			if ((j > (baris - i)) && (j < (baris + i) ))
+			{
+				if (j > baris)
+				{
+					k--;
+				}
+				else{
+					k++;
+				}
+				cout << k <<" ";
+			}
+			else 
+			{
+				cout <<"  ";
+			}
+		}
+		cout << endl;
+	}
+	
+	return 0;
+}

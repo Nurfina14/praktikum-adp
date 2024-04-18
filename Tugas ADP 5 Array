@@ -1,0 +1,128 @@
+#include <iostream>
+
+using namespace std;
+
+int main () {
+	int a[100],b[100], na, nb, hasil1 [100], hasil2 [100], hasil3 [100], nhasil1 = 0, nhasil2 = 0, nhasil3 = 0;
+	cout<<"Nama: Nur Fina\nNIM: 2310432016\nShift: 4"<<endl;
+	
+	cout<<"Masukkan Jumlah Elemen Array 1 (bilangan 0 sampai 9): ";
+	cin>>na;
+	for (int i=1; i<=na; i++)	
+	{
+		int e;
+		bool invalid ;
+		do 
+		{ 
+			cout<<"Masukkan Elemen ke-"<<i<<" Array 1: ";
+			cin>>e;
+			invalid = (e<0 || e>9);
+			if (invalid)
+			{
+				cout<<"\nInputan Anda Tidak Valid, Ulangi Kembali!\n\n";	
+			}
+		} while (invalid);
+		a [i-1]=e;
+	}
+	
+	
+	cout<<"Masukkan Jumlah Elemen Array 2 (bilangan 0 sampai 9): ";
+	cin>>nb;
+	for (int i=1; i<=nb; i++)	
+	{
+		int e;
+		bool invalid ;
+		do 
+		{ 
+			cout<<"Masukkan Elemen ke-"<<i<<" Array 2: ";
+			cin>>e;
+			invalid = (e<0 || e>9);
+			if (invalid)
+			{
+				cout<<"\nInputan Anda Tidak Valid, Ulangi Kembali!\n\n";	
+			}
+		} while (invalid);
+		b [i-1]=e;
+	}
+	
+	for (int i=0; i<na; i++)
+	{
+		bool found = false;
+		
+		for (int j=0; j<nb; j++) 
+		{
+			if (a[i] == b[j]){
+				found = true;
+				break;
+			} 
+		}
+		
+		if (!found) {
+			hasil1[nhasil1] = a[i];
+			
+			nhasil1++;
+		}
+	}
+	
+	for (int i=0; i<nb; i++)
+	{
+		bool found = false;
+		
+		for (int j=0; j<na; j++) 
+		{
+			if (b[i] == a[j]){
+				found = true;
+				break;
+			} 
+		}
+		
+		if (!found) {
+			hasil2[nhasil2] = b[i];
+			
+			nhasil2++;
+		}
+	}
+	
+	for (int i=0; i<na; i++)
+	{
+		bool found = false;
+		
+		for (int j=0; j<nb; j++) 
+		{
+			if (a[i] == b[j]){
+				found = true;
+				break;
+			} 
+		}
+		
+		if (found) {
+			hasil3[nhasil3] = a [i];
+			nhasil3++;
+		}
+	}
+
+	cout<<"Elemen Array 1 yang tidak ada di Array 2: "<<endl;
+	for (int i=0; i<nhasil1; i++)
+	{
+		cout << hasil1[i] << "\t"; 
+	}
+	cout<<"\n";
+	
+	cout<<"Elemen Array 2 yang tidak ada di Array 1: "<<endl;
+	for (int i=0; i<nhasil2; i++)
+	{
+		cout << hasil2[i] << "\t"; 
+	}
+	cout<<"\n";
+	
+	cout<<"Irisan Array 1 dan Array 2: "<<endl;
+	for (int i=0; i<nhasil3; i++)
+	{
+		cout << hasil3[i] << "\t"; 
+	}
+	cout<<"\n";
+	
+	cin.get();
+	
+ 	return 0;	
+}

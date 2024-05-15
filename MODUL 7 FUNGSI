@@ -1,0 +1,41 @@
+print("Nama: Nur Fina")
+print("NIM: 2310432016")
+print("Shift: 4")
+print("========================================")
+
+def kec_akhir_jarak(v0,a,t):
+    v = v0+a*t
+    s = v0*t + 0.5*a*t*t
+    return v,s
+
+def print_tabel():
+    tabel = ["Kecepatan Awal","Percepatan","Waktu","Kecepatan Akhir","Jarak"]
+    for i in range(len(tabel)):
+        print("| {:^16} ".format("_" * 16), end=" ")
+    print("|")
+    for col in (tabel):
+        print("| {:^16} ". format(col), end=" ")
+    print("|")
+    for i in range(len(tabel)):
+        print("| {:^16} ".format("_" * 16), end=" ")
+    print("|")
+    
+n = int(input("Masukkan jumlah n: "))
+inputan = []
+
+for i in range(n):
+    v0= float(input(f"Masukkan Nilai v0 {i+1}: "))
+    a= float(input(f"Masukkan Nilai a {i+1}: "))
+    t= float(input(f"Masukkan Nilai t {i+1}: "))
+    inputan.append((v0,a,t))
+	
+print_tabel()
+
+for i in range(n):
+    v0,a,t = inputan[i]
+    v,s = kec_akhir_jarak(v0,a,t)
+    
+    row = [v0, a, t, v, s]
+    for cell in row:
+        print("| {:^16} ". format(cell), end=" ")
+    print("|")

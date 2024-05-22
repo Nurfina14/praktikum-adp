@@ -1,0 +1,62 @@
+def tambah(tanggal,keterangan,jumlah,jenis):
+    with open("data_uang.txt","a") as file:
+        file.write(f"{tanggal}, {keterangan}, {jumlah}, {jenis}\n")
+        print("Data Anda Telah Ditambahkan!")
+        print()
+        
+def hapus(tanggal):
+    with open("data_uang.txt", "r") as file:
+        baris = file.readlines()
+    with open("data_uang.txt", "w") as file:
+        for i in baris:
+            if i.strip().split(",")[0] != tanggal:
+                file.write(i)
+        print("Data Telah Dihapus!")
+        print()
+        
+def tampil():
+    with open("data_uang.txt", "r") as file:
+        baris = file.readlines()
+        print("Berikut Data Transaksi Anda: ")
+        print("===============================================================================")
+        print(f"|| {'Tanggal':<15} || {'Keterangan':<15} || {'Jumlah':<15} || {'Jenis':<15} ||")
+        print("===============================================================================")
+        for i in baris:
+            tanggal, keterangan, jumlah, jenis = i.strip().split(",")
+            print(f"|| {tanggal:<15} || {keterangan:<15} || {jumlah:<15} || {jenis:<15} ||")
+            print("===============================================================================")
+        print()
+while True:
+    print("Selamat Datang Di Program Kami")
+    print("Menu:")
+    print("1.Tambahkan")
+    print("2.Hapus")
+    print("3.Tampilkan")
+    print("4.Keluar")
+    
+    pilihan = int(input("Masukkan Pilihan Anda: "))
+    if pilihan == 1:
+        print("Tambahkan Data Transaksi Anda")
+        tanggal = input("Masukkan Tanggal Transaksi(DD/MM/YYYY): ")
+        keterangan = input("Masukkan Keterangan Transaksi: ")
+        jumlah = input("Masukkan jumlah uang: ")
+        jenis = input("Masukkan jenis Transaksi(pengeluaran/pemasukkan): ")
+        tambah(tanggal,keterangan,jumlah,jenis)
+    elif pilihan == 2:
+        print("Hapus Data Menurut Tanggal Transaksi")
+        tanggal = input("Masukkan tanggal transaksi")
+        hapus(tanggal)
+    elif pilihan == 3:
+        tampil()
+    elif pilihan == 4:
+        print("Terimakasih, jangan lupa menabung:)")
+        print()
+        break
+    else:
+        print("Menu tidak valid, silahkan ulangi pilihan!")
+        print()
+        
+    
+        
+    
+    

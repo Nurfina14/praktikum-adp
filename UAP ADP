@@ -1,0 +1,236 @@
+import os
+import time
+from termcolor import colored, cprint
+
+def pilihan_buku():
+    print(" Pilihan Buku yang Tersedia ")
+    print(" 1. Komik Miiko seri 33 ")
+    print(" 2. Hujan - Tere Liye ")
+    print(" 3. Kalkukulus Jilid II - Purcell")
+    print(" 4. Filosofi Teras ")
+    print(" 5. Majalah Bobo Limited Edition ")
+    print(" 6. Aljabar Linear Elementer - Howard Anton dan Chris Rorres ")
+    print(" 7. Secret od Divine Love ")
+    print(" 8. Kamus Bahasa Inggris ")
+    print()
+
+def tambah_data(nama, judul_buku, jumlah, harga):
+    with open("data_buku.txt", "a") as file:
+        file.write(f"{nama}, {judul_buku}, {jumlah}, {harga}\n")
+    cprint(" Data telah ditambahkan! ", "yellow")
+
+def tampil_data():
+    with open("data_buku.txt", "r") as file:
+        baris = file.readlines()
+        if not baris:
+            cprint(" Data tidak ditemukan!", "red")
+            return
+        print(" Berikut Data Pembelian Toko Buku Media Utama: ")
+        print(" ====================================================================================================================== ")
+        print(f" || {'Nama':<20} || {'Judul Buku':<50} || {'Jumlah':<15} || {'Harga':<15} ||")
+        print(" ====================================================================================================================== ")
+        
+        for data in baris:
+            data = data.strip()
+            if data:
+                data_split = data.split(",")
+                if len(data_split) == 4:
+                    nama, judul_buku, jumlah, harga = data.split(",")
+                    print(f" || {nama:<20} || {judul_buku:<50} || {jumlah:<15} || {harga:<15} ||")
+                    print(" ====================================================================================================================== ")
+                else:
+                    cprint(f" Baris tidak sesuai format: {data}", "red")
+        print()
+
+def hapus_data(nama2):
+    with open("data_buku.txt", "r") as file:
+        line = file.readlines()
+    with open("data_buku.txt", "w") as file:
+        for i in line:
+            if i.split(",")[0] != nama2:
+                file.write(i)
+    time.sleep(1)
+    cprint(" Data berhasil dihapus! ", "red")
+
+def kurangi_stok(nomor_buku, jumlah):
+    data_jualan = [
+        [ 64, 1, 110, 213, 13, 58, 88, 34],
+        [30000, 65000, 567000, 98000, 29000, 874000, 118000, 212000]
+    ]
+    if 1<= nomor_buku <= len(data_jualan[0]):
+        if 0 < jumlah <= data_jualan[0][nomor_buku - 1]:
+            data_jualan[0][nomor_buku - 1] -= jumlah
+            print(f" Stok tersisa {data_jualan[0][nomor_buku - 1]}")
+        else:
+            cprint(" Jumlah yang dimasukkan tidak valid atau melebihi stok yang ada", "red")
+    else:
+        cprint(" Nomor buku tidak valid! ", "red")
+
+def buat_kartu():
+    cprint(" Pembuatan Kartu Member ", "blue")
+    nama_member = input(" Masukkan nama Anda: ")
+    nomor_hp = input(" Masukkan nomor HP Anda: ")
+
+    with open("data_member1.txt", "a") as file:
+        file.write(f" {nama_member}, {nomor_hp}\n")
+    time.sleep(1)
+    cprint(" Kartu member berhasil dibuat!", "blue")
+
+def cek_member(nama_member):
+    ketemu = False
+    with open("data_member1.txt", "r") as file:
+        for member in file:
+            if nama_member == member.split(",")[0].strip():
+                ketemu = True
+                pass
+    return ketemu
+
+def tampil_data_member():
+    with open("data_member1.txt", "r") as file:
+        baris1 = file.readlines()
+        if not baris1:
+            cprint(" Data tidak ditemukan!", "red")
+            return
+        print(" Berikut Data Member Toko Buku Media Utama: ")
+        print(" ================================================== ")
+        print(f" || {'Nama':<20} || {'Nomor HP':<20} || ")
+        print(" ================================================== ")
+        
+        for data1 in baris1:
+            data1 = data1.strip()
+            if data1:
+                data_split1 = data1.split(",")
+                if len(data_split1) == 2:
+                    nama_member, nomor_hp = data1.split(",")
+                    print(f" || {nama_member:<20} || {nomor_hp:<20} ||")
+                    print(" ================================================== ")
+                else:
+                    cprint(f" Baris tidak sesuai format: {data1}", "red")
+        print()
+
+judul_buku = {
+     1 : "Komik Miiko seri 33", 
+     2 : "Hujan - Tere Liye", 
+     3 : "Kalkukulus Jilid II - Purcell",
+     4 : "Filosofi Teras", 
+     5 : "Majalah Bobo Limited Edition", 
+     6 : "Aljabar Linear Elementer - Howard Anton, Chris Rorres",
+     7 : "Secret of Divine Love", 
+     8 : "Kamus Bahasa Inggris"
+}
+
+data_jualan = [
+    [ 64, 1, 110, 213, 13, 58, 88, 34],
+    [30000, 65000, 567000, 98000, 29000, 874000, 118000, 212000]
+]
+
+os.system('cls')
+print(" ============================================================== ")
+cprint("         Selamat Datang di Toko Buku Media Utama ", "blue")
+print(" ============================================================== ")
+
+time.sleep(2)
+print(" 1. Customer ")
+print(" 2. Owner ")
+masuk = input(" Masuk sebagai : ")
+if masuk == '1':
+    cek = True
+    while cek:
+        print(" Menu Toko Buku Media Utama ")
+        print(" 1. Membuat Data Pembelian Buku ")
+        print(" 2. Menampilkan Data Pembelian Buku ")
+        print(" 3. Menghapus Data Pembelian Buku ")
+        print(" 4. Pembuatan Kartu Member")
+        print(" 5. Keluar ")
+        
+        pilih = input(" Masukkan Pilihan Anda : ")
+        if pilih == '1':
+            nama = input(" Masukkan nama Anda: ")
+            pilihan_buku()
+            nomor_buku = int(input(" Masukkan nomor buku yang dipilih: "))
+            
+            if 1 <= nomor_buku <= len(judul_buku):
+                judul = judul_buku[nomor_buku]
+                harga = data_jualan[1][nomor_buku - 1]
+                stok = data_jualan[0][nomor_buku - 1]
+            else:
+                cprint(" Nomor buku tidak valid!", "red")
+                continue
+            
+            status_member = input(" Apakah Anda memiliki kartu member? (ya/tidak): ").lower()
+            if status_member == 'ya':
+                kartu = input(" Masukkan nama kartu member Anda : ")
+                if cek_member(kartu):
+                    diskon = 0.2
+                else:
+                    cprint(" Kartu member tidak ditemukan!", "red")
+                    continue
+            elif status_member == 'tidak':
+                member1 = input(" Apakah Anda ingin membuat kartu member? (ya/tidak): ").lower()
+                if member1 == 'ya':
+                    buat_kartu()
+                    diskon = 0.2
+                else:
+                    diskon = 0
+            else:
+                cprint(" Tidak Valid!", "red")
+
+            harga_diskon = data_jualan[1][nomor_buku-1] * (1-diskon)
+            jumlah_buku = input(f" Masukkan jumlah buku yang dibeli (stok tersedia {stok}): ")
+            if jumlah_buku.isdigit():
+                jumlah_buku = int(jumlah_buku)
+                if 0 < jumlah_buku <= stok:
+                    total_harga = jumlah_buku * harga_diskon
+                    tambah_data(nama, judul, jumlah_buku, total_harga)
+                    print(f" Pembelian {jumlah_buku} buku '{judul}' seharga {total_harga} telah berhasil.")
+                    kurangi_stok(nomor_buku, jumlah_buku)  
+                else:
+                    cprint(" Jumlah Tidak Valid!", "red")
+            else:
+                cprint(" Harus berupa angka!", "red")
+            input()
+            os.system('cls')
+        elif pilih == '2':
+            time.sleep(1.5)
+            tampil_data()
+        elif pilih == '3':
+            nama2 = input(" Nama pembeli yang akan dihapus: ")
+            hapus_data(nama2)
+        elif pilih == '4':
+            buat_kartu()
+        elif pilih == '5':
+            cprint(" Terimakasih dan Silahkan Datang Kembali! ", "blue")
+            break
+    else:
+         cprint(" Menu Tidak Valid!", "red")
+         os.system('cls')
+elif masuk == '2':
+    sandi = input(" Masukkan sandi Anda (6 digit): ")
+    if sandi == '010101':
+        cek1 = True
+        while cek1:
+            cprint(" Selamat Datang Owner!", "yellow")
+            print(" Menu Toko Buku Media Utama (Mode Owner)")
+            print(" 1. Cek Data Member ")
+            print(" 2. Cek Pembelian Customer ")
+            print(" 3. Keluar ")
+
+            pilihan = input(" Masukkan pilihan Anda : ")
+            if pilihan == '1':
+                time.sleep(1)
+                tampil_data_member()
+                input()
+            elif pilihan == '2':
+                time.sleep(1.5)
+                tampil_data()
+            elif pilihan == '3':
+                cprint(" Terimakasih dan Silahkan Datang Kembali! ", "blue")
+                break
+            else:
+                cprint(" Menu tidak valid!", "red")
+                os.system('cls')
+    else:
+        cprint(" Anda Bukan Owner!", "red")
+else:
+    cprint(" Opsi Tidak Valid!", "red")
+    os.system('cls')

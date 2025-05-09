@@ -1,0 +1,27 @@
+teks=input("Masukkan Teks: ")
+
+jumlah_kata=len(teks.split())
+
+jumlah_huruf = 0
+
+for i in teks:
+  if ('A' <= i <= 'Z') or ('a' <= i <= 'z'):
+    jumlah_huruf += 1
+
+def hitung_frekuensi_huruf(teks):
+    frekuensi = {}
+
+    for i in teks:
+        if ('A' <= i <= 'Z') or ('a' <= i <= 'z'):
+            if i in frekuensi:
+                frekuensi[i] += 1
+            else:
+                frekuensi[i] = 1
+
+    for i in frekuensi:
+        print(f"'{i}': {frekuensi[i]}")
+
+print("Jumlah kata:",jumlah_kata)
+print("Jumlah huruf:",jumlah_huruf)
+print("Frekuensi huruf:")
+hitung_frekuensi_huruf(teks)
